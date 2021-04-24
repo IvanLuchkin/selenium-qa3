@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.PageFactory;
 import pages.LoginPage;
 
@@ -11,8 +12,10 @@ public class TestSetup {
 
     @BeforeEach
     public void setup() {
+        FirefoxOptions driverOptions = new FirefoxOptions();
+        driverOptions.addArguments("--headless");
         WebDriverManager.firefoxdriver().setup();
-        webDriver = new FirefoxDriver();
+        webDriver = new FirefoxDriver(driverOptions);
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
@@ -23,7 +26,7 @@ public class TestSetup {
         loginPage.setValueToPassword(System.getenv("password"));
         loginPage.confirmForm();
         try {
-            Thread.sleep(500);
+            Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
         }

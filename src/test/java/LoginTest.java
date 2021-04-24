@@ -9,7 +9,7 @@ public class LoginTest extends TestSetup {
     @Test
     public void successfulLoginRedirectsToCalendar() {
         login();
-        assertEquals(webDriver.getCurrentUrl(), CalendarPage.SITE_LINK);
+        assertEquals(CalendarPage.SITE_LINK, webDriver.getCurrentUrl());
     }
 
     @Test
@@ -19,7 +19,7 @@ public class LoginTest extends TestSetup {
         loginPage.setValueToEmail("");
         loginPage.setValueToPassword("");
         loginPage.confirmForm();
-        Thread.sleep(500);
+        Thread.sleep(200);
         assertEquals(webDriver.getCurrentUrl(), LoginPage.SITE_LINK);
     }
 
