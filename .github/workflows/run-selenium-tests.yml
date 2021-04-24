@@ -21,5 +21,7 @@ jobs:
         uses: actions/setup-java@v1.4.3
         with:
           java-version: 15
-      - name: 'Run with Maven'
+      - name: 'Install Mozilla Firefox browser'
+        run: sudo apt-get install firefox 
+      - name: 'Test with Maven'
         run:  mvn install surefire:test
