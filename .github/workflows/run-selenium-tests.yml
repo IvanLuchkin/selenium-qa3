@@ -23,5 +23,7 @@ jobs:
           java-version: 15
       - name: 'Install Mozilla Firefox browser'
         run: sudo apt-get install firefox 
+      - name: 'Setup DISOLAY environment variable'
+        run: export DISPLAY=:0
       - name: 'Test with Maven'
         run:  mvn install surefire:test
