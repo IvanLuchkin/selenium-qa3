@@ -13,7 +13,7 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton;
 
-    public static final String SITE_LINK = "https://autobranding.producement.com/login";
+    public static final String SITE_LINK = "https://app.viralitycontent.com/login";
 
     private void setValueToField(WebElement field , String value){
         field.sendKeys(value);

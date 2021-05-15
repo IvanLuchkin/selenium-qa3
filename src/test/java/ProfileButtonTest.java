@@ -14,13 +14,4 @@ public class ProfileButtonTest extends TestSetup {
         monthlySetupPage.accountMenuButton.click();
         assertNotNull(webDriver.findElement(By.cssSelector("[href=\"https://socialmediacalendar.app/my-account/subscriptions/\"]")));
     }
-
-    @Test
-    public void profileMenuHasTutorialsLink() {
-        login();
-        webDriver.get(MonthlySetupPage.SITE_LINK);
-        MonthlySetupPage monthlySetupPage = PageFactory.initElements(webDriver, MonthlySetupPage.class);
-        monthlySetupPage.accountMenuButton.click();
-        assertNotNull(webDriver.findElement(By.cssSelector("[href=\"https://www.youtube.com/playlist?list=PLgqQMBJcfrJF5ceU8MuVhIuHq01tFhuOg\"]")));
-    }
 }
